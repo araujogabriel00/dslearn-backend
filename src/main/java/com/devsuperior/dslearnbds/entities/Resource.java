@@ -4,6 +4,8 @@ import com.devsuperior.dslearnbds.enums.ResourceType;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -24,11 +26,22 @@ public class Resource implements Serializable {
     @JoinColumn(name = "offer_id")
     private Offer offer;
 
-    public Resource(){
+    @OneToMany(mappedBy = "resource")
+    private List<Section> sections = new ArrayList<>();
+
+    public List<Section> getSections() {
+        return sections;
+    }
+
+    public void setSections(List<Section> sections) {
+        this.sections = sections;
+    }
+
+    public Resource() {
 
     }
 
-    public Resource(Long id, String title, String description, Integer position, String imgUri, ResourceType resourceType, Offer offer) {
+    public Resource(Long id, String title, String description, Integer position, String imgUri, ResourceType resourceType, Offer offer, List<Section> sections) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -36,6 +49,7 @@ public class Resource implements Serializable {
         this.imgUri = imgUri;
         this.resourceType = resourceType;
         this.offer = offer;
+        this.sections = sections;
     }
 
     public Long getId() {
