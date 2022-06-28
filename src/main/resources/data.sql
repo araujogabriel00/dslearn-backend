@@ -59,3 +59,9 @@ VALUES ('Cap 2', 'O que é HTML', 1, 'https://i.ytimg.com/vi/sTX0UEplF54/maxresd
 
 INSERT INTO tb_section(title, description, position, img_Uri, resource_id, prerequisite_id)
 VALUES ('Cap 3', 'Construindo Sites', 1, 'https://i.ytimg.com/vi/sTX0UEplF54/maxresdefault.jpg', 1, 2);
+
+INSERT INTO tb_enrollment(user_id, offer_id, enroll_Moment, refund_Moment, available, only_Update)
+VALUES (1, 1, TIMESTAMP WITH TIME ZONE '2022-06-22T09:00:00.12345Z', null, true, false);
+
+INSERT INTO tb_enrollment(user_id, offer_id, enroll_Moment, refund_Moment, available, only_Update)
+VALUES (2, 1, TIMESTAMP WITH TIME ZONE '2022-06-22T09:00:00.12345Z', null, true, false);

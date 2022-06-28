@@ -3,11 +3,12 @@ package com.devsuperior.dslearnbds.entities;
 import com.devsuperior.dslearnbds.entities.pk.EnrollmentPK;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.Instant;
 
 @Entity
 @Table(name = "tb_enrollment")
-public class Enrollment {
+public class Enrollment implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -21,7 +22,7 @@ public class Enrollment {
     @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
     private Instant refundMoment;
 
-    private boolean avaible;
+    private boolean available;
     private boolean onlyUpdate;
 
     public EnrollmentPK getId() {
@@ -37,12 +38,12 @@ public class Enrollment {
 
     }
 
-    public Enrollment(User user, Offer offer, Instant enrollMoment, Instant refundMoment, boolean avaible, boolean onlyUpdate) {
+    public Enrollment(User user, Offer offer, Instant enrollMoment, Instant refundMoment, boolean available, boolean onlyUpdate) {
         id.setUser(user);
         id.setOffer(offer);
         this.enrollMoment = enrollMoment;
         this.refundMoment = refundMoment;
-        this.avaible = avaible;
+        this.available = available;
         this.onlyUpdate = onlyUpdate;
     }
 
@@ -78,12 +79,12 @@ public class Enrollment {
         this.refundMoment = refundMoment;
     }
 
-    public boolean isAvaible() {
-        return avaible;
+    public boolean isavailable() {
+        return available;
     }
 
-    public void setAvaible(boolean avaible) {
-        this.avaible = avaible;
+    public void setavailable(boolean available) {
+        this.available = available;
     }
 
     public boolean isOnlyUpdate() {
