@@ -65,3 +65,19 @@ VALUES (1, 1, TIMESTAMP WITH TIME ZONE '2022-06-22T09:00:00.12345Z', null, true,
 
 INSERT INTO tb_enrollment(user_id, offer_id, enroll_Moment, refund_Moment, available, only_Update)
 VALUES (2, 1, TIMESTAMP WITH TIME ZONE '2022-06-22T09:00:00.12345Z', null, true, false);
+
+INSERT INTO tb_lesson(title, position, section_id)VALUES('Aula 1 do CAP. 1', 1,1);
+INSERT INTO tb_content(id, text_Content, video_Uri)
+VALUES(1, 'Material 1', 'https://www.youtube.com/watch?v=wzJTpzHHoVg');
+
+INSERT INTO tb_lesson(title, position, section_id) VALUES('Aula 2 do CAP. 1', 1,1);
+INSERT INTO tb_content(id, text_Content, video_Uri)VALUES(2, 'Material 2', 'https://www.youtube.com/watch?v=wzJTpzHHoVg');
+
+INSERT INTO tb_task (id, description, question_Count, approval_Count, weight, due_Date)
+VALUES(2, 'Fazer um trabalho,',5,4,1.0,TIMESTAMP WITH TIME ZONE '2022-06-25T09:00:00.12345Z');
+
+INSERT INTO tb_lessons_done(lesson_id,user_id,offer_id)
+VALUES(1,1,1);
+
+INSERT INTO tb_lessons_done(lesson_id,user_id,offer_id)
+VALUES(2,1,1);
